@@ -1,0 +1,159 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Gowun Dodum", serif;
+    font-size: 14px;
+    color: #fff;
+    background-color: #0A2540;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Navigation */
+nav {
+    background-color: #0A2540;
+    padding: 15px 0;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo .name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f0ad73;
+}
+
+p {
+    margin: 0;
+}
+
+.btn {
+    background-color: #f0ad73;
+    color: #0A2540;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #f0c964;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('../images/ItaewonYachtClub.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero .overlay {
+    background: rgba(10, 37, 64, 0.7);
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    margin: 5px;
+}
+
+.hero .outline {
+    background: transparent;
+    border: 2px solid #f0ad73;
+    color: #fff;
+}
+
+.hero .outline:hover {
+    background-color: #f0ad73;
+    color: #0A2540;
+}
+
+/* Info Section */
+.info {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 12px;
+    background-color: #0A2540;
+    color: #fff;
+    margin-top: auto;
+}
