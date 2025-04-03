@@ -8,9 +8,9 @@
             <polygon points="3.33,3.33 3.33,46.66 96.66,25" fill="#c00d45" stroke="#000000" stroke-width="1.33" />
             <circle cx="25" cy="25" r="12" fill="#f0ad73" />
             <text x="25" y="24" font-family="Arial" font-size="10" fill="#0A2540"
-              text-anchor="middle">&#9777;&#9780;</text>
-            <text x="25" y="32" font-family="Arial" font-size="10" fill="#0A2540"
               text-anchor="middle">&#9779;&#9782;</text>
+            <text x="25" y="32" font-family="Arial" font-size="10" fill="#0A2540"
+              text-anchor="middle">&#9777;&#9780;</text>
           </svg>
           <div class="name">Itaewon Yacht Club</div>
         </div>
@@ -23,6 +23,20 @@
         <li><a href="#events">Events</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#membership">Membership</a></li>
+        <li>
+          <button onclick="switchLang('en')">English</button>
+          <button onclick="switchLang('ko')">한국어</button>
+        </li>
       </ul>
+
     </div>
+    <script>
+      function switchLang(lang) {
+        const url = new URL(window.location.href);
+        url.hash = "";
+        url.searchParams.set('lang', lang);
+        window.location.href = url.toString();
+      }
+    </script>
+    
   </nav>

@@ -13,6 +13,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <script>
+        const userLang = navigator.language || navigator.userLanguage;
+        if (!document.cookie.includes('lang=') && userLang.startsWith('ko')) {
+          window.location.search = '?lang=ko';
+        }
+      </script>
+      
 </head>
 <body>
     <center>

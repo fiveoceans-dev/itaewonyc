@@ -24,6 +24,36 @@ body {
     margin: auto;
 }
 
+.backdround {
+    background: url('../images/club.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+img {
+    display: block;
+    border-radius: 6px;
+}
+
+.logo_img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0px;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-top: 25px;
+}
+
+h2,
+p {
+    margin: 0.5rem 0;
+    min-width: 250px;
+    line-height: 1.6;
+}
+
+
 /* Navigation */
 nav {
     background-color: #0A2540;
@@ -51,6 +81,12 @@ nav {
     color: #fff;
 }
 
+.svg-scale {
+    transform: scale(1.5);
+    transform-origin: top left; /* or center */
+    display: inline-block;
+  }
+  
 .nav-menu {
     list-style: none;
     display: flex;
@@ -92,18 +128,18 @@ nav ul li a:hover {
     color: #f0ad73;
 }
 
-p {
-    margin: 0;
-}
-
 a:link,
 a:visited {
-    padding: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
 }
 
+.social_link {
+    color: #fff;
+    text-decoration: none;
+    padding-top: 5px;
+}
 .btn {
     background-color: #f0ad73;
     color: #0A2540;
@@ -117,11 +153,6 @@ a:visited {
 
 .btn:hover {
     background-color: #f0c964;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
 }
 
 /* Hero Section */
@@ -144,19 +175,6 @@ img {
     border-radius: 8px;
 }
 
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-h2 {
-    margin: 5px;
-}
-
-p {
-    margin: 5px;
-}
 
 .hero .outline {
     background: transparent;
@@ -169,28 +187,86 @@ p {
     color: #0A2540;
 }
 
-/* Info Section */
-.info {
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+/* Info Card System */
+
+.grid-container-gallery {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 1rem;
 }
 
-/* Footer */
-.footer {
+.grid-container-gallery img {
     width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 12px;
-    background-color: #0A2540;
-    color: #fff;
-    margin-top: auto;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
 }
 
-/* Responsive */
+.grid-container-row {
+    height: auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    /* Optional: spacing between rows */
+    justify-items: center;
+}
+
+.grid-container-column {
+    height: auto;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    justify-items: left;
+}
+
+.card-vertical {
+    height: auto;
+    width: 350px;
+    /* background: rgba(255, 255, 255, 0.05); */
+    border-radius: 8px;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+    text-align: center;
+}
+
+.card-horizontal {
+    height: auto;
+    width: 90%;
+    /* background: rgba(255, 255, 255, 0.05); */
+    border-radius: 8px;
+    padding: 25px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    /* image left, text right */
+    gap: 1rem;
+}
+
+.card-vertical img,
+.card-horizontal img {
+    width: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.card-horizontal .card-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Responsive adjustments */
 @media (max-width: 600px) {
     .navbar {
         flex-direction: column;
@@ -207,4 +283,15 @@ p {
         justify-content: center;
         flex-wrap: wrap;
     }
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 12px;
+    background-color: #0A2540;
+    color: #fff;
+    margin-top: auto;
 }
