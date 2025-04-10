@@ -11,9 +11,9 @@ const app = express();
 // i18n Configuration
 // -------------------
 i18n.configure({
-  locales: ['en', 'ko'],
+  locales: ['ko', 'en'],
   directory: path.join(__dirname, 'locales'),
-  defaultLocale: 'en',
+  defaultLocale: 'ko',
   cookie: 'lang',
   queryParameter: 'lang',
   autoReload: true,
