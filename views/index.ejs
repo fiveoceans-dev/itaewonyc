@@ -1,35 +1,43 @@
-<%# index.ejs %>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Peer-to-peer AI supercomputer">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Peer-to-peer AI supercomputer" />
     <title>Itaewon YC</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet" />
     <script>
-        const userLang = navigator.language || navigator.userLanguage;
-        if (!document.cookie.includes('lang=') && userLang.startsWith('ko')) {
-          window.location.search = '?lang=ko';
-        }
+        window.switchLang = function(lang) {
+          const url = new URL(window.location.href);
+          const segments = url.pathname.split('/').filter(Boolean);
+          if (segments.length > 0 && ['ko', 'en'].includes(segments[0])) {
+            segments[0] = lang;
+          } else {
+            segments.unshift(lang);
+          }
+          url.pathname = '/' + segments.join('/');
+          window.location.href = url.toString();
+        };
       </script>
       
 </head>
-<body>
-    <center>
-        <%- include('partials/header') %>
-        <div class="content">
-            <%- include('partials/main-column') %>
-        </div>
-    </center>
 
-    <!-- Include Footer -->
-    <%- include('partials/footer') %>
+<body>
+    <header>
+        <%- include('partials/header') %>
+    </header>
+    <main class="content">
+        <%- include('partials/main-column') %>
+    </main>
+    <footer class="footer">
+        <%- include('partials/footer') %>
+    </footer>
 </body>
+
 </html>
