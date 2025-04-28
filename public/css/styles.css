@@ -207,7 +207,7 @@ a:visited {
 
 .grid-container-row {
     height: auto;
-    width: 90%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
@@ -215,48 +215,48 @@ a:visited {
     justify-items: center;
 }
 
+/* Container grid */
 .grid-container-column {
     height: auto;
-    max-width: 600px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 25px;
-    justify-items: left;
-}
+    justify-items: center;
+  }
 
 .card-vertical {
     height: auto;
     width: 350px;
-    /* background: rgba(255, 255, 255, 0.05); */
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     padding: 0 25px;
     display: flex;
     flex-direction: column;
-    /* align-items: center;
-    justify-content: center; */
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
-
+/* Card layout */
 .card-horizontal {
-    height: auto;
-    width: 90%;
-    /* background: rgba(255, 255, 255, 0.05); */
-    border-radius: 8px;
-    padding: 25px;
-    margin: auto;
     display: flex;
     flex-direction: row;
-    /* image left, text right */
-    gap: 1rem;
-}
+    align-items: center;
+    gap: 1.5rem;
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+  }
 
 .card-vertical img,
 .card-horizontal img {
-    width: auto;
-    max-height: 350px;
-    object-fit: cover;
+    width: auto; /* Scale image to container width */
+    height: 100%; /* Preserve aspect ratio */
+    max-height: 350px; /* Optional limit on vertical size */
+    object-fit: cover; /* Crop excess while keeping center in view */
     border-radius: 6px;
     margin-bottom: 1rem;
+    display: block;
 }
 
 .card-horizontal .card-text {
@@ -266,24 +266,39 @@ a:visited {
     text-align: left;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .logo {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-menu {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+/* Responsive stacking on small screens */
+@media (max-width: 768px) {
+.card-horizontal {
+    flex-direction: column;
+    text-align: center;
 }
+
+.card-horizontal .card-image {
+    flex: none;
+    max-width: 100%;
+}
+
+.card-horizontal .card-text {
+    align-items: center;
+    text-align: center;
+}
+.navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-menu {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+}
+  
 
 /* Footer */
 .footer {
