@@ -1,156 +1,147 @@
 <%# // partials/main-column.ejs %>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="overlay">
-            <h1>
-                <%= __('hero_title') %>
-            </h1>
-            <h2>
-                <%= __('hero_subtitle') %>
-            </h2>
-            <a class="btn" href="#events">
-                <%= __('discover_events') %>
-            </a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="club">
-        <div class="">
-            <h1><%= __('about_title') %></h1>
-            <div class="svg-scale">
-                <svg width="100" height="50" xmlns="http://www.w3.org/2000/svg">
-                    <polygon points="3.33,3.33 3.33,46.66 96.66,25" fill="#c00d45" stroke="#000000"
-                        stroke-width="1.33" />
-                    <circle cx="25" cy="25" r="12" fill="#f0ad73" />
-                    <text x="25" y="24" font-family="Arial" font-size="10" fill="#0A2540"
-                        text-anchor="middle">&#9779;&#9782;</text>
-                    <text x="25" y="32" font-family="Arial" font-size="10" fill="#0A2540"
-                        text-anchor="middle">&#9777;&#9780;</text>
-                </svg>
-            </div>
-
-            <div class="grid-container-column">
-                <div class="card-horizontal">
-                    <div class="card-text">
-                        <p><%= __('about_description') %></p>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Fleet Section -->
-    <section id="">
-        <div class="container">
-            <h1><%= __('fleet_title') %></h1>
-            <p><%= __('fleet_description') %></p>
-            <div class="grid-container-row">
-                <div class="card-vertical">
-                    <h2>J/24</h2>
-                    <img src="images/J24-itaewon-yacht-club.jpg" alt="J/24 Sailboat">
-                    <p><%= __('j24_description') %></p>
-
-                </div>
-
-                <div class="card-vertical">
-                    <h2>J/70</h2>
-                    <img src="images/j70-itaewon-yacht-club.jpg" alt="J/70 Sailboat">
-                    <p><%= __('j70_description') %></p>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Teams Section -->
-    <section id="teams">
-        <div class="container">
-        <h1><%= __('teams_title') %></h1>
-        <p><%= __('teams_description') %></p>
-        
-        <div class="grid-container-column">
-            <div class="card-horizontal">
-            <div class="card-image">
-                <img src="images/Team1-itaewon-yacht-club.jpg" alt="Team Member 1" />
-            </div>
-            <div class="card-text">
-                <h2><%= __('team1_name') %></h2>
-                <p><%= __('team1_description') %></p>
-                <a class="social_link" href="<%= __('team1_link') %>" target="_blank"><%= __('team1_link') %></a>
-            </div>
-            </div>
-    
-            <div class="card-horizontal">
-            <div class="card-image">
-                <img src="images/Team2-itaewon-yacht-club.jpg" alt="Team Member 2" />
-            </div>
-            <div class="card-text">
-                <h2><%= __('team2_name') %></h2>
-                <p><%= __('team2_description') %></p>
-                <a class="social_link" href="<%= __('team2_link') %>" target="_blank"><%= __('team2_link') %></a>
-            </div>
-            </div>
-    
-            <div class="card-horizontal">
-            <div class="card-image">
-                <img src="images/Team3-itaewon-yacht-club.jpg" alt="Team Member 3" />
-            </div>
-            <div class="card-text">
-                <h2><%= __('team3_name') %></h2>
-                <p><%= __('team3_description') %></p>
-                <a class="social_link" href="<%= __('team3_link') %>" target="_blank"><%= __('team3_link') %></a>
-            </div>
-            </div>
-        </div>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="overlay">
+      <h1><%= __('hero_title') %></h1>
+      <h2><%= __('hero_subtitle') %></h2>
+      <a class="btn" href="#events"><%= __('discover_events') %></a>
+    </div>
+  </section>
   
-
-    <!-- Events Section -->
-    <section id="events">
-        <div>
-            <h1><%= __('events_title') %></h1>
-            <p><%= __('events_description') %></p>
-            <div class="grid-container-row">
-                <% for (let i = 1; i <= 5; i++) { 
-                     let key = `event${i}_description`; %>
-                  <div class="card-vertical">
-                    <img src="images/Event<%= i %>-itaewon-yacht-club.jpg" alt="Regatta" />
-                    <p><%= __(key) %></p>
-                  </div>
-                <% } %>
-              </div>
-              
+  <!-- About Section -->
+  <section id="club" class="section">
+    <div class="container">
+      <h1><%= __('about_title') %></h1>
+      <div class="svg-scale">
+        <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="3.33,3.33 3.33,46.66 96.66,25" fill="#c00d45" stroke="#000" stroke-width="1.33" />
+          <circle cx="25" cy="25" r="12" fill="#f0ad73" />
+          <text x="25" y="24" font-family="Arial" font-size="10" fill="#0A2540" text-anchor="middle">&#9779;&#9782;</text>
+          <text x="25" y="32" font-family="Arial" font-size="10" fill="#0A2540" text-anchor="middle">&#9777;&#9780;</text>
+        </svg>
+      </div>
+      <div class="grid-container-column">
+        <div class="card-horizontal">
+          <div class="card-text">
+            <p><%= __('about_description') %></p>
+          </div>
         </div>
-    </section>
-
-    <!-- Membership Section -->
-    <section id="membership">
-        <div class="backdround">
-            <h1><%= __('membership_title') %></h1>
-            <div class="grid-container-column">
-                <div class="card-horizontal">
-                    <p><%= __('membership_description') %></p>
-
-                </div>
-            </div>
-
+      </div>
+    </div>
+  </section>
+  
+  <!-- Fleet Section -->
+  <section id="fleet" class="section">
+    <div class="container">
+      <h1><%= __('fleet_title') %></h1>
+      <p><%= __('fleet_description') %></p>
+      <div class="grid-container-row">
+        <div class="card-vertical">
+          <h2>J/24</h2>
+          <img src="images/J24-itaewon-yacht-club.jpg" alt="J/24 Sailboat">
+          <p><%= __('j24_description') %></p>
         </div>
-    </section>
-
-    <section id="gallery">
-        <div class="">
-            <h1><%= __('gallery_title') %></h1>
-            <p><%= __('gallery_description') %> <a href="https://instagram.com/itaewonyc"><img class="logo_img" src="images/instagram.svg"></img></a></p>
-            <div class="grid-container-gallery">
-                <% for (let i = 1; i <= 20; i++) { %>
-                    <img src="images/Gallery<%= i %>-itaewon-yacht-club.jpg" alt="Gallery Itaewon Yacht Club" />
-                <% } %>
-            </div>
-
+  
+        <div class="card-vertical">
+          <h2>J/70</h2>
+          <img src="images/j70-itaewon-yacht-club.jpg" alt="J/70 Sailboat">
+          <p><%= __('j70_description') %></p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Teams Section -->
+  <section id="teams" class="section">
+    <div class="container">
+      <h1><%= __('teams_title') %></h1>
+      <p><%= __('teams_description') %></p>
+  
+      <div class="grid-container-column">
+  
+        <div class="card-horizontal">
+          <div class="card-image">
+            <img src="images/Team1.png" alt="Team Member 1" />
+          </div>
+          <div class="card-text">
+            <h2><%= __('team1_name') %></h2>
+            <p><%= __('team1_description') %></p>
+            <a class="social_link" href="<%= __('team1_link') %>" target="_blank"><%= __('team1_link') %></a>
+          </div>
+        </div>
+  
+        <div class="card-horizontal">
+          <div class="card-image">
+            <img src="images/Team2.png" alt="Team Member 2" />
+          </div>
+          <div class="card-text">
+            <h2><%= __('team2_name') %></h2>
+            <p><%= __('team2_description') %></p>
+            <a class="social_link" href="<%= __('team2_link') %>" target="_blank"><%= __('team2_link') %></a>
+          </div>
+        </div>
+  
+        <div class="card-horizontal">
+          <div class="card-image">
+            <img src="images/Team3.png" alt="Team Member 3" />
+          </div>
+          <div class="card-text">
+            <h2><%= __('team3_name') %></h2>
+            <p><%= __('team3_description') %></p>
+            <a class="social_link" href="<%= __('team3_link') %>" target="_blank"><%= __('team3_link') %></a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Events Section -->
+  <section id="events" class="section">
+    <div class="container">
+      <h1><%= __('events_title') %></h1>
+      <p><%= __('events_description') %></p>
+      <div class="grid-container-row">
+        <% for (let i = 1; i <= 5; i++) { %>
+          <div class="card-vertical">
+            <img src="images/Event<%= i %>-itaewon-yacht-club.jpg" alt="Regatta Event <%= i %>">
+            <p><%= __('event' + i + '_description') %></p>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Membership Section -->
+  <section id="membership" class="section background-section">
+    <div class="container">
+      <h1><%= __('membership_title') %></h1>
+      <div class="grid-container-column">
+        <div class="card-horizontal">
+          <div class="card-text">
+            <p><%= __('membership_description') %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Gallery Section -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h1><%= __('gallery_title') %></h1>
+      <p><%= __('gallery_description') %> 
+        <a href="https://instagram.com/itaewonyc" target="_blank">
+          <img class="logo_img" src="images/instagram.svg" alt="Instagram Logo">
+        </a>
+      </p>
+      <div class="grid-container-gallery">
+        <% for (let i = 1; i <= 20; i++) { %>
+          <img src="images/Gallery<%= i %>-itaewon-yacht-club.jpg" alt="Gallery Image <%= i %>">
+        <% } %>
+      </div>
+    </div>
+  </section>
+  

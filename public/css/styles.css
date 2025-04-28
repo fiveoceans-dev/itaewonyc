@@ -1,162 +1,95 @@
-/* Global styles */
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html,
-body {
+  }
+  
+  html, body {
     height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: "Gowun Dodum", serif;
+    font-family: "Gowun Dodum", sans-serif;
     font-size: 14px;
     color: #fff;
     background-color: #0A2540;
-    text-align: center;
     display: flex;
     flex-direction: column;
-}
-
-.container {
-    width: 90%;
-    margin: auto;
-}
-
-.backdround {
-    background: url('../images/club.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
-
-img {
-    display: block;
-    border-radius: 6px;
-}
-
-.logo_img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 0px;
-}
-
-h1 {
+  }
+  
+  /* Typography */
+  h1, h2, p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+  }
+  
+  h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
     margin-top: 25px;
-}
-
-h2,
-p {
-    margin: 0.5rem 0;
-    min-width: 250px;
-    line-height: 1.6;
-}
-
-
-/* Navigation */
-nav {
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* Layout Containers */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .section {
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  /* Navigation */
+  nav {
     background-color: #0A2540;
     padding: 15px 0;
-    color: #fff;
-}
-
-.navbar {
+  }
+  
+  .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-}
-
-.logo {
+  }
+  
+  .logo {
     display: flex;
     align-items: center;
     gap: 10px;
     flex-shrink: 0;
-}
-
-.logo .name {
+  }
+  
+  .logo .name {
     font-size: 1.4rem;
     font-weight: bold;
     color: #fff;
-}
-
-.svg-scale {
-    transform: scale(1.5);
-    transform-origin: top left; /* or center */
-    display: inline-block;
   }
   
-.nav-menu {
+  .nav-menu {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 10px;
-}
-
-.nav-menu li {
-    margin: 0 5px;
-}
-
-.nav-menu li a {
-    text-decoration: none;
+  }
+  
+  .nav-menu li a {
     color: #fff;
+    text-decoration: none;
+    padding: 8px;
     transition: color 0.3s;
-}
-
-.nav-menu li a:hover {
+  }
+  
+  .nav-menu li a:hover {
     color: #f0ad73;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 5px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #f0ad73;
-}
-
-a:link,
-a:visited {
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.social_link {
-    color: #fff;
-    text-decoration: none;
-    padding-top: 5px;
-}
-.btn {
-    background-color: #f0ad73;
-    color: #0A2540;
-    padding: 8px 15px;
-    margin: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background-color: #f0c964;
-}
-
-/* Hero Section */
-.hero {
+  }
+  
+  /* Hero Section */
+  .hero {
     background-image: url('../images/ItaewonYachtClub.jpg');
     background-size: cover;
     background-position: center;
@@ -165,148 +98,168 @@ a:visited {
     align-items: center;
     justify-content: center;
     position: relative;
-}
-
-.hero .overlay {
-    background: rgba(10, 37, 64, 0.7);
-    color: #fff;
-    padding: 30px;
     text-align: center;
+  }
+  
+  .hero .overlay {
+    background: rgba(10, 37, 64, 0.7);
+    padding: 30px;
     border-radius: 8px;
-}
-
-
-.hero .outline {
-    background: transparent;
-    border: 2px solid #f0ad73;
-    color: #fff;
-}
-
-.hero .outline:hover {
+  }
+  
+  .btn {
     background-color: #f0ad73;
     color: #0A2540;
-}
-
-/* Info Card System */
-
-.grid-container-gallery {
-    width: 90%;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #f0c964;
+  }
+  
+  /* Info Sections */
+  .background-section {
+    background: url('../images/club.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  /* Card Layouts */
+  .grid-container-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    padding: 1rem;
-}
-
-.grid-container-gallery img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 4px;
-}
-
-.grid-container-row {
-    height: auto;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
-    /* Optional: spacing between rows */
-    justify-items: center;
-}
-
-/* Container grid */
-.grid-container-column {
-    height: auto;
+    margin-top: 30px;
+  }
+  
+  .grid-container-column {
     display: grid;
     grid-template-columns: 1fr;
     gap: 25px;
-    justify-items: center;
+    margin-top: 30px;
   }
-
-.card-vertical {
-    height: auto;
-    width: 350px;
+  
+  .card-horizontal, .card-vertical {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
-    padding: 0 25px;
+    padding: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-/* Card layout */
-.card-horizontal {
-    display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 1.5rem;
-    padding: 20px;
-
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
   }
-
-.card-vertical img,
-.card-horizontal img {
-    width: auto; /* Scale image to container width */
-    height: 100%; /* Preserve aspect ratio */
-    max-height: 350px; /* Optional limit on vertical size */
-    object-fit: cover; /* Crop excess while keeping center in view */
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.card-horizontal .card-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-/* Responsive stacking on small screens */
-@media (max-width: 768px) {
-.card-horizontal {
-    flex-direction: column;
-    text-align: center;
-}
-
-.card-horizontal .card-image {
-    flex: none;
-    max-width: 100%;
-}
-
-.card-horizontal .card-text {
-    align-items: center;
-    text-align: center;
-}
-.navbar {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo {
-    flex-direction: column;
-    align-items: center;
-}
-
-.nav-menu {
-    justify-content: center;
-    flex-wrap: wrap;
-}
-}
   
-
-/* Footer */
-.footer {
+  .card-horizontal {
+    flex-direction: row;
+  }
+  
+  .card-vertical {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .card-horizontal .card-image {
+    flex: 0 0 30%;
+  }
+  
+  .card-horizontal .card-image img, 
+  .card-vertical img {
+    width: auto;
+    height: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  .card-text {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .card-text p, .card-text h2 {
+    margin-bottom: 10px;
+  }
+  
+  .social_link {
+    color: #f0ad73;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .social_link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Gallery */
+  .grid-container-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .grid-container-gallery img {
     width: 100%;
-    padding: 10px 0;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  /* Instagram logo */
+  .logo_img {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  
+  /* SVG Scaling */
+  .svg-scale {
+    display: inline-block;
+    transform: scale(1.5);
+    transform-origin: center;
+    margin: 20px 0;
+  }
+  
+  /* Footer */
+  .footer {
     text-align: center;
     font-size: 12px;
+    padding: 20px 0;
     background-color: #0A2540;
-    color: #fff;
     margin-top: auto;
-}
+    color: #fff;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .card-horizontal {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .logo {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav-menu {
+      justify-content: center;
+    }
+  
+    .card-text {
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
